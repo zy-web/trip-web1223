@@ -146,7 +146,7 @@
                 traditional: true,
                 success: function (message) {
                     if (message == "1") {
-                        window.location.href = "/admin/nousViewlist";
+                        window.location.href = "/admin/nousContent";
                     }
                 }
             });

@@ -1,0 +1,30 @@
+.auto{
+	width: 1400px;
+	margin: auto;
+}
+.min{
+	position: relative;
+	margin: auto;
+	width: 1202px;
+	height: 410px;
+	margin-bottom: 10px;
+}
+.min_j_text{
+    font-size: 18px;
+    line-height: 1.7em;
+    width: 468px;
+    color: #333;
+    position:  absolute;
+    top: 180px;
+    left: 570px;
+}
+.min_o_text{
+	font-size: 18px;
+    line-height: 1.7em;
+    position: absolute;
+    top: 130px;
+    left: 90px;
+    width: 468px;
+    color: #333;
+}
+

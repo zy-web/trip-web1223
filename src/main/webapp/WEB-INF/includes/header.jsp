@@ -30,6 +30,8 @@
 <!-- DataTables -->
 <link rel="stylesheet" href="${path}/static/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
+
+
 <%--图片上传--%>
 <link rel="stylesheet" href="${path}/static/assets/plugins/dropzone/dropzone.css" />
 <link rel="stylesheet" href="${path}/static/assets/plugins/dropzone/min/basic.min.css" />

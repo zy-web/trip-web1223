@@ -20,7 +20,7 @@
 
 	<%--banner--%>
 	<div class="col-lg-12" style="padding: 0;">
-		<img src="/static/assets/img/test/tree.png" style="width: 100%" class="img-responsive">
+		<img src="${path}/static/assets/img/test/tree.png" style="width: 100%" class="img-responsive">
 		<br>
 	</div>
 

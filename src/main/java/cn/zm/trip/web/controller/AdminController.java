@@ -776,4 +776,31 @@ public class AdminController {
 		return "redirect:replyList";
 	}
 
+	/**
+	 * 跳转常识管理页面
+	 * @return
+	 */
+	@RequestMapping(value = "nousContent", method = RequestMethod.GET)
+	public String index() {
+		return "admin/nousContent";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

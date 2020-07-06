@@ -1,24 +1,32 @@
 package cn.zm.trip.web.domain;
 
+import org.springframework.stereotype.Component;
+import java.util.Date;
+@Component
 public class Nous {
 	private Integer tpNid;
 	private String tpNtitle;
 	private String tpNcontent;
-	private String tpNdate;
-	private String tpNprice;
-	public Nous() {}
-	public Nous(Integer tpNid, String tpNtitle, String tpNcontent, String tpNdate, String tpNprice) {
+	private Date tpNdate;
+	private String tpImg;
+	private String tpCategory;
+	public Nous() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Nous(Integer tpNid, String tpNtitle, String tpNcontent, Date tpNdate, String tpImg, String tpCategory) {
 		super();
 		this.tpNid = tpNid;
 		this.tpNtitle = tpNtitle;
 		this.tpNcontent = tpNcontent;
 		this.tpNdate = tpNdate;
-		this.tpNprice = tpNprice;
+		this.tpImg = tpImg;
+		this.tpCategory = tpCategory;
 	}
 	@Override
 	public String toString() {
-		return "Nous [tpNid=" + tpNid + ", tpNtitle=" + tpNtitle + ", tpNcontent=" + tpNcontent + ", tpNdate=" + tpNdate
-				+ ", tpNprice=" + tpNprice + "]";
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 	public Integer getTpNid() {
 		return tpNid;
@@ -30,24 +38,30 @@ public class Nous {
 		return tpNtitle;
 	}
 	public void setTpNtitle(String tpNtitle) {
-		this.tpNtitle = tpNtitle == null ? null : tpNtitle.trim();
+		this.tpNtitle = tpNtitle;
 	}
 	public String getTpNcontent() {
 		return tpNcontent;
 	}
 	public void setTpNcontent(String tpNcontent) {
-		this.tpNcontent = tpNcontent == null ? null : tpNcontent.trim();
+		this.tpNcontent = tpNcontent;
 	}
-	public String getTpNdate() {
+	public Date getTpNdate() {
 		return tpNdate;
 	}
-	public void setTpNdate(String tpNdate) {
-		this.tpNdate = tpNdate == null ? null : tpNdate.trim();
+	public void setTpNdate(Date tpNdate) {
+		this.tpNdate = tpNdate;
 	}
-	public String getTpNprice() {
-		return tpNprice;
+	public String getTpImg() {
+		return tpImg;
 	}
-	public void setTpNprice(String tpNprice) {
-		this.tpNprice = tpNprice == null ? null : tpNprice.trim();
+	public void setTpImg(String tpImg) {
+		this.tpImg = tpImg;
+	}
+	public String getTpCategory() {
+		return tpCategory;
+	}
+	public void setTpCategory(String tpCategory) {
+		this.tpCategory = tpCategory;
 	}
 }

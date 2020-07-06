@@ -23,7 +23,7 @@
 		<section class="content-header">
 			<h1>
 				<br>
-				景点管理|
+				常识管理|
 				<small>操作</small>
 			</h1>
 
@@ -33,10 +33,8 @@
 				<li class="active">Users</li>
 			</ol>
 		</section>
-
 		<br/><br/>
 		<div class="col-xs-12">
-
 			<%--Denger alert--%>
 			<c:if test="${msg.msg != null}">
 				<div class="alert alert-${msg.status == 200 ? "success" : "danger"} alert-dismissible">
@@ -48,71 +46,73 @@
 			<%--/.alert--%>
 			<div class="box">
 				<div class="box-header">
-					<h3 class="box-title">景点内容</h3>
+					<h3 class="box-title">常识列表</h3>
+					<div class="row" style="padding-left: 12px; padding-top: 10px;">
+						<a href="/admin/nousEdit" type="button" class="btn-primary btn-sm"><i class="fa fa-plus"></i>常识新增</a>&nbsp;&nbsp;
+						<span style="cursor: pointer" type="button" class="btn-primary btn-sm viewsectiondelete">
+							<i class="fa fa-trash-o"></i>批量删除</span>&nbsp;&nbsp;
+					</div>
+					<div class="box-tools">
+						<form action="/admin/viewPointSearch" method="get">
+							<div class="input-group input-group-sm" style="width: 150px;">
+								<input type="text" name="keyword" class="form-control pull-right" placeholder="搜索...">
+
+								<div class="input-group-btn">
+									<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
+
 				<div class="box-body table-responsive">
 					<table id="myuserstable" class="table table-bordered table-striped">
 						<thead>
 						<tr>
-							<th>参数</th>
-							<th>值</th>
+							<th>
+								<label>
+									<input type="checkbox" class="minimal icheck_master">
+								</label>
+							</th>
+							<th>编码</th>
+							<th>常识分类</th>
+							<th>常识标题</th>
+							<th>常识内容</th>
+							<th>缩图</th>
+							<th>地址</th>
+							<th>开放时间</th>
+							<th>创建时间</th>
+							<th>操作</th>
 						</tr>
 						</thead>
 						<tbody>
-						<tr>
-							<td>景点编码</td>
-							<td>${viewPoint.tpVid}</td>
-						</tr>
-						<tr>
-							<td>经典归属地</td>
-							<td><span class="label label-primary">${viewPoint.tpLocation}</span></td>
-						</tr>
-						<tr>
-							<td>景点标题</td>
-							<td>${viewPoint.tpTitle}</td>
-						</tr>
-						<tr>
-							<td>景点名称</td>
-							<td>${viewPoint.tpVname}</td>
-						</tr>
-						<tr>
-							<td>景点类型</td>
-							<td>${viewPoint.tpVtype}</td>
-						</tr>
-						<tr>
-							<td>联系电话</td>
-							<td>${viewPoint.tpVphone}</td>
-						</tr>
-						<tr>
-							<td><span>景点等级</span></td>
-							<td><span class="label label-primary">${viewPoint.tpLevel}</span></td>
-						</tr>
-						<tr>
-							<td>景点价格</td>
-							<td>${viewPoint.tpPrice}</td>
-						</tr>
-						<tr>
-							<td>缩略图</td>
-							<td><img src="${viewPoint.tpVpic}" alt="" style="width: 50px;height: 50px"></td>
-						</tr>
-						<tr>
-							<td>详细地址</td>
-							<td>${viewPoint.tpZip}</td>
-						</tr>
-						<tr>
-							<td>开放时间</td>
-							<td>${viewPoint.tpOpentime}</td>
-						</tr>
-						<tr>
-							<td>发布时间</td>
-							<td><fmt:formatDate value="${viewPoint.tpCreattime}" pattern="yyyy-MM-dd"/></td>
-						</tr>
+						<c:forEach items="${nous}" var="nous">
+							<tr>
+								<td>
+									<label>
+										<input name="nous" value="${nous.tpNid}" type="checkbox" class="minimal minimal-myminor">
+									</label>
+								</td>
+								<td>${nous.tpNid}</td>
+								<td><span class="label label-primary">${nous.tpCategory}</span></td>
+								<td>${fn:substring(nous.tpNtitle,0,3)}...</td>
+								<td>${fn:substring(nous.tpNcontent,0,3)}...</td>
+								<td><img style="width: 50px;height: 30px;" src="${nous.tpImg}" /></td>
+								<td><fmt:formatDate value="${nous.tpNdate}" pattern="yyyy-MM-dd"/></td>
+								<td>
+									<a href="/admin/viewcontent?tpVid=${nous.tpNidd}" class="btn btn-success btn-xs"><i class="fa fa-search"></i>内容
+									</a>
+									<a href="/admin/viewedit?tpVid=${nous.tpNid}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>编辑
+									</a>
+									<a href="/admin/viewdelete?tpVid=${nous.tpNid}" class="btn btn-danger  btn-xs"><i
+											class="fa fa-trash"></i>删除
+									</a>
+								</td>
+							</tr>
+						</c:forEach>
 						</tbody>
 					</table>
 					<br>
-					<div class="">
-						${viewPoint.tpVcontent}
-					</div>
 				</div>
 				<!-- /.box-body -->
 			</div>
@@ -170,7 +170,7 @@
                 traditional: true,
                 success: function (message) {
                     if (message == "1") {
-                        window.location.href = "/admin/viewlist";
+                        window.location.href = "/admin/nousList";
                     }
                 }
             });

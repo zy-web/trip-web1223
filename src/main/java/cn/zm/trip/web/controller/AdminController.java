@@ -5,6 +5,7 @@ import cn.zm.trip.web.commons.TimeStampUtil;
 import cn.zm.trip.web.dao.*;
 import cn.zm.trip.web.domain.*;
 import cn.zm.trip.web.service.AdminService;
+import cn.zm.trip.web.service.NousService;
 import cn.zm.trip.web.service.UserService;
 import cn.zm.trip.web.service.ViewPointService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,8 @@ public class AdminController {
 	@Autowired
 	private ViewPointService viewPointService;
 	@Autowired
+	private NousService nousService;
+	@Autowired
 	private HotelDao hotelDao;
 	@Autowired
 	private ViewPointDao viewPointDao;
@@ -43,6 +46,8 @@ public class AdminController {
 	private WordsDao wordsDao;
 	@Autowired
 	private ReplyDao replyDao;
+	@Autowired
+	private NousDao nousDao;
 
 	/**
 	 * **********login start***************
@@ -780,9 +785,29 @@ public class AdminController {
 	 * 跳转常识管理页面
 	 * @return
 	 */
-	@RequestMapping(value = "nousContent", method = RequestMethod.GET)
-	public String index() {
-		return "admin/nousContent";
+	@RequestMapping(value = "nousList", method = RequestMethod.GET)
+	public String nousList(Model model,NousExample nousExample,HttpServletRequest request) {
+			nousExample.setOrderByClause("tp_nid desc");
+			String prefix = "/static/upload/nousavatar/";
+			List<Nous> nouses = nousService.selectByExample(nousExample);
+			for (Nous nous : nouses) {
+				String suffix = nous.getTpImg();
+				//前端img标签路径
+				nous.setTpImg(prefix + suffix);
+			}
+			//存储信息转发
+			model.addAttribute("nouses", nouses);
+			return "/admin/nous_list";
+	}
+	/**
+	 * 跳转常识新增
+	 * @return
+	 */
+	@RequestMapping(value = "nousEdit", method = RequestMethod.GET)
+	public String NousEdit(Integer tpNid, Model model) {
+		Nous nous = nousService.selectByPrimaryKey(tpNid);
+		model.addAttribute("nous", nous);
+		return "/admin/nous_edit";
 	}
 }
 

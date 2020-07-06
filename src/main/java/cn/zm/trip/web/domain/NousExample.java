@@ -365,73 +365,143 @@ public class NousExample {
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceIsNull() {
-            addCriterion("tp_nprice is null");
+        public Criteria andTpImgIsNull() {
+            addCriterion("tp_img is null");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceIsNotNull() {
-            addCriterion("tp_nprice is not null");
+        public Criteria andTpImgIsNotNull() {
+            addCriterion("tp_img is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceEqualTo(String value) {
-            addCriterion("tp_nprice =", value, "tpNprice");
+        public Criteria andTpImgEqualTo(String value) {
+            addCriterion("tp_img =", value, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceNotEqualTo(String value) {
-            addCriterion("tp_nprice <>", value, "tpNprice");
+        public Criteria andTpImgNotEqualTo(String value) {
+            addCriterion("tp_img <>", value, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceGreaterThan(String value) {
-            addCriterion("tp_nprice >", value, "tpNprice");
+        public Criteria andTpImgGreaterThan(String value) {
+            addCriterion("tp_img >", value, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceGreaterThanOrEqualTo(String value) {
-            addCriterion("tp_nprice >=", value, "tpNprice");
+        public Criteria andTpImgGreaterThanOrEqualTo(String value) {
+            addCriterion("tp_img >=", value, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceLessThan(String value) {
-            addCriterion("tp_nprice <", value, "tpNprice");
+        public Criteria andTpImgLessThan(String value) {
+            addCriterion("tp_img <", value, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceLessThanOrEqualTo(String value) {
-            addCriterion("tp_nprice <=", value, "tpNprice");
+        public Criteria andTpImgLessThanOrEqualTo(String value) {
+            addCriterion("tp_img <=", value, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceLike(String value) {
-            addCriterion("tp_nprice like", value, "tpNprice");
+        public Criteria andTpImgLike(String value) {
+            addCriterion("tp_img like", value, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceNotLike(String value) {
-            addCriterion("tp_nprice not like", value, "tpNprice");
+        public Criteria andTpImgNotLike(String value) {
+            addCriterion("tp_img not like", value, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceIn(List<String> values) {
-            addCriterion("tp_nprice in", values, "tpNprice");
+        public Criteria andTpImgIn(List<String> values) {
+            addCriterion("tp_img in", values, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceNotIn(List<String> values) {
-            addCriterion("tp_nprice not in", values, "tpNprice");
+        public Criteria andTpImgNotIn(List<String> values) {
+            addCriterion("tp_img not in", values, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceBetween(String value1, String value2) {
-            addCriterion("tp_nprice between", value1, value2, "tpNprice");
+        public Criteria andTpImgBetween(String value1, String value2) {
+            addCriterion("tp_img between", value1, value2, "tpImg");
             return (Criteria) this;
         }
 
-        public Criteria andTpNpriceNotBetween(String value1, String value2) {
-            addCriterion("tp_nprice not between", value1, value2, "tpNprice");
+        public Criteria andTpImgNotBetween(String value1, String value2) {
+            addCriterion("tp_img not between", value1, value2, "tpImg");
+            return (Criteria) this;
+        }
+        
+        public Criteria andTpCategoryIsNull() {
+            addCriterion("tp_img is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryIsNotNull() {
+            addCriterion("tp_img is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryEqualTo(String value) {
+            addCriterion("tp_category =", value, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryNotEqualTo(String value) {
+            addCriterion("tp_category <>", value, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryGreaterThan(String value) {
+            addCriterion("tp_category >", value, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryGreaterThanOrEqualTo(String value) {
+            addCriterion("tp_category >=", value, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryLessThan(String value) {
+            addCriterion("tp_category <", value, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryLessThanOrEqualTo(String value) {
+            addCriterion("tp_category <=", value, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryLike(String value) {
+            addCriterion("tp_category like", value, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryNotLike(String value) {
+            addCriterion("tp_category not like", value, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryIn(List<String> values) {
+            addCriterion("tp_category in", values, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryNotIn(List<String> values) {
+            addCriterion("tp_category not in", values, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryBetween(String value1, String value2) {
+            addCriterion("tp_category between", value1, value2, "tpCategory");
+            return (Criteria) this;
+        }
+
+        public Criteria andTpCategoryNotBetween(String value1, String value2) {
+            addCriterion("tp_category not between", value1, value2, "tpCategory");
             return (Criteria) this;
         }
 	}

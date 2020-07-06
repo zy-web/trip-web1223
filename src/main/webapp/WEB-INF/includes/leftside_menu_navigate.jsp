@@ -102,8 +102,8 @@
                         </span>
 				</a>
 				<ul class="treeview-menu">
-                    <li><a href="/admin/nousContent" target="admin"><i class="fa fa-circle-o"></i>常识列表</a></li>
-                    <li><a href="/admin/replyList" target="admin"><i class="fa fa-circle-o"></i>常识新增</a></li>
+                    <li><a href="/admin/nousList" target="admin"><i class="fa fa-circle-o"></i>常识列表</a></li>
+                    <li><a href="/admin/nousEdit" target="admin"><i class="fa fa-circle-o"></i>常识新增</a></li>
                 </ul>
 			</li>
 			
